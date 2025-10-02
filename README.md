@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Preguntas sobre React, Next.js y GitHub
 
-## Getting Started
+---
 
-First, run the development server:
+### 1. ¿Qué ventajas tiene usar React frente a trabajar solo con JavaScript puro para interfaces web?
+- **Componentización**: React permite dividir la UI en componentes reutilizables.
+- **Actualización eficiente**: Gracias al Virtual DOM, React actualiza solo lo necesario.
+- **Mantenimiento más fácil**: El código es más ordenado y escalable.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Es muy util al poder reutilizar componentes, realmente concentra todo, lo centraliza y solo es invocarlos para usarlos, bastante util.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 2. ¿Qué beneficios ofrece Next.js al trabajar sobre React?
+- **Ruteo automático**: cada archivo en `/app` o `/pages` es una ruta.
+- **Optimización automática**: imágenes, fuentes, bundling y caching incluidos.
+- **Mejor SEO**: renderizado en servidor mejora la indexación.
+- **Fullstack**: puedes crear APIs dentro del mismo proyecto.
+- **Deploy sencillo**: integración directa con Vercel.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ofrece realmente muchos beneficios al centralizar todo en un mismo "archivo", al poder trabajar con el frontend y el backend a la vez facilita todo bastante. 
+Aunque un defecto que vi es que realmente parece un sancocho, y todo esta revuelto lo cual al momento de trabajarlo me llego a confundir mucho, peor aun cuando empece a implementar a tailwind
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 3. ¿Qué significa que Next.js tenga un App Router y por qué se recomienda usarlo?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Segun lo que investigue:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- El App Router organiza rutas desde la carpeta `/app`.
+- Usa React Server Components por defecto.
+- Facilita:
+  - Layouts anidados.
+  - Estados de carga (`loading.js`).
+  - Manejo de errores (`error.js`).
+  - Data fetching con `async/await`.
+- Es el futuro estándar de Next.js y mejora rendimiento y organización.  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. ¿Qué diferencia hay entre client components y server components en Next.js?
+- **Server Components**:
+  - Renderizados en el servidor.
+  - No incluyen JS extra en el navegador.
+  - Ideales para datos estáticos o consultas a APIs.
+- **Client Components** (con `"use client"`):
+  - Renderizados en el navegador.
+  - Necesarios para interactividad (`useState`, `useEffect`, eventos).
+  - Envían más JS al cliente.   
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### 5. ¿Por qué se usan repositorios públicos o privados en GitHub en lugar de solo carpetas locales?
+Git es muy famoso y utilizado no solo en el hambito de la programacion, por lo que tengo entendido.
+Esta herramienta ayuda ayuda a controlar las versiones y las ramificaciones que puede tener un proyecto, gracias a esto podemos volver atrás en el tiempo y si hubo algun error restaurarse en ese punto del proyecto.
+Tambien permite el trabajo colaborativo, al permitir a varios programadores trabajando en conjunto, y subir sus avances.
+El codigo no se pierde, facilita el despliegue y el testing.
+Y estes mismo nos puede servir de portafolio, al dar en evidencia nuestros proyectos personales y demas.
+
+- GitHub aporta profesionalismo, seguridad y trabajo en equipo, mientras que las carpetas locales son frágiles y limitadas.
